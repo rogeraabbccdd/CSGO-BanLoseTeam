@@ -1,4 +1,4 @@
-# CSGO-BanLoseTeam
+# CSGO-BanLoseTeam (WIP, HAVEN'T TEST YET)
 Ban Lose Team
 
 #Cvar
