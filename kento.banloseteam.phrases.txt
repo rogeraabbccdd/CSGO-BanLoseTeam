@@ -7,12 +7,12 @@
 	
 	"Kick Messege"
 	{
-		"en"		"Next"
+		"en"		"You've be kicked because you lose a match."
 	}
 	
 	"Ban Reason"
 	{
-		"en"		"Back"
+		"en"		"Lose Match"
 	}
 	
 }
