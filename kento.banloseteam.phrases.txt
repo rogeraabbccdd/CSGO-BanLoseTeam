@@ -1,0 +1,19 @@
+"Phrases"
+{
+	"Loser has been kicked."
+	{
+		"en"		"Loser has been kicked."
+	}
+	
+	"Kick Messege"
+	{
+		"en"		"Next"
+	}
+	
+	"Ban Reason"
+	{
+		"en"		"Back"
+	}
+	
+}
+ 
