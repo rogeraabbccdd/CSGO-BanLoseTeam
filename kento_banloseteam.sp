@@ -47,7 +47,7 @@ public OnPluginStart()
 	
 	//CVARS
     BLT_TIME = CreateConVar("sm_banloseteam_time", "30", "Ban Time.");
-    BLT_ROUND = CreateConVar("sm_banloseteam_round", "16", "Win Round.");
+    BLT_ROUND = CreateConVar("sm_banloseteam_round", "16", " How Many Round Need To Win The Match.");
 	
     AutoExecConfig(true, "kento_banloseteam");
     
