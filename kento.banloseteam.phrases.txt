@@ -1,19 +1,18 @@
 "Phrases"
 {
-	"Loser has been kicked."
+	"Loser has been kicked"
 	{
 		"en"		"Loser has been kicked."
 	}
 	
 	"Kick Messege"
 	{
-		"en"		"You've be kicked because you lose a match."
+		"en"		"Next"
 	}
 	
 	"Ban Reason"
 	{
-		"en"		"Lose Match"
+		"en"		"Back"
 	}
-	
 }
  

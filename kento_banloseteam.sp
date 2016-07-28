@@ -16,8 +16,8 @@ new Handle:BLT_ROUND = INVALID_HANDLE;
 public Plugin:myinfo =
 {
 	name = "[CS:GO] Ban Lose Team",
-	author = "Kento",
-	version = "1.0",
+	author = "Kento, CamerDisco",
+	version = "1.1",
 	description = "Ban Lose Team Players",
 	url = ""
 };
@@ -55,6 +55,7 @@ public OnPluginStart()
 }
 
 //***************OnMatchEnd***************
+//******Special Thanks To CamerDisco******
 public OnMatchEnd (Handle:event, const String:name[], bool:dontBroadcast)
 {
     new Client = GetClientOfUserId(GetEventInt(event, "userid"));
@@ -74,7 +75,7 @@ public OnMatchEnd (Handle:event, const String:name[], bool:dontBroadcast)
             if ( IsClientConnected(Client) && !IsFakeClient(Client) )
             {
                 BanClient(Client, BLT_TIME, BANFLAG_AUTO, BLT_REASON, BLT_MESSEGE);
-                PrintToChatAll("%t", "Loser has been kicked.");  
+                PrintToChatAll("%t", "Loser has been kicked");  
             }
         }
         
@@ -93,7 +94,7 @@ public OnMatchEnd (Handle:event, const String:name[], bool:dontBroadcast)
             if ( IsClientConnected(Client) && !IsFakeClient(Client) )
             {
                 BanClient(Client, BLT_TIME, BANFLAG_AUTO, BLT_REASON, BLT_MESSEGE);
-                PrintToChatAll("%t", "Loser has been kicked.");  
+                PrintToChatAll("%t", "Loser has been kicked");  
             }
         }
         else if (GetClientTeam(Client) == CT)
