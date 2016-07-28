@@ -1,6 +1,8 @@
 # CSGO-BanLoseTeam (WIP, HAVEN'T TEST YET)
 Ban Lose Team
 
+Special Thanks To CamerDisco
+
 #Cvar
 sm_banloseteam_time - Ban Time
 
