@@ -58,50 +58,51 @@ public OnPluginStart()
 //******Special Thanks To CamerDisco******
 public OnMatchEnd (Handle:event, const String:name[], bool:dontBroadcast)
 {
-    new Client = GetClientOfUserId(GetEventInt(event, "userid"));
+    for(new i = 1; i <= MaxClients; i++)    
+    {
+        char BLT_MESSEGE[100];
+        Format(BLT_MESSEGE, sizeof(BLT_MESSEGE), "%T", "Kick Messege");
     
-    char BLT_MESSEGE[100];
-    Format(BLT_MESSEGE, sizeof(BLT_MESSEGE), "%T", "Kick Messege");
+        char BLT_REASON[100];
+        Format(BLT_REASON, sizeof(BLT_REASON), "%T", "Ban Reason");
     
-    char BLT_REASON[100];
-    Format(BLT_REASON, sizeof(BLT_REASON), "%T", "Ban Reason");
-    
-    //TR WIN
-    if (CS_GetTeamScore(TR) == BLT_ROUND)
-	{
-        //Kick CT
-        if (GetClientTeam(Client) == CT)
+        //TR WIN
+        if (CS_GetTeamScore(TR) == BLT_ROUND)
         {
-            if ( IsClientConnected(Client) && !IsFakeClient(Client) )
+            //Kick CT
+            if (GetClientTeam(i) == CT)
             {
-                BanClient(Client, BLT_TIME, BANFLAG_AUTO, BLT_REASON, BLT_MESSEGE);
-                PrintToChatAll("%t", "Loser has been kicked");  
+                if ( IsClientConnected(i) && !IsFakeClient(i) )
+                {
+                    BanClient(i, BLT_TIME, BANFLAG_AUTO, BLT_REASON, BLT_MESSEGE);
+                    PrintToChatAll("%t", "Loser has been kicked");  
+                }
             }
-        }
         
-        else if (GetClientTeam(Client) == TR)
-        {
-            return Plugin_Handled;
-        }
-	}
-    
-    //CT WIN
-    else if (CS_GetTeamScore(CT) == BLT_ROUND)
-	{
-        //Kick TR
-        if (GetClientTeam(Client) == TR)
-        {
-            if ( IsClientConnected(Client) && !IsFakeClient(Client) )
+            else if (GetClientTeam(i) == TR)
             {
-                BanClient(Client, BLT_TIME, BANFLAG_AUTO, BLT_REASON, BLT_MESSEGE);
-                PrintToChatAll("%t", "Loser has been kicked");  
+                return Plugin_Handled;
             }
         }
-        else if (GetClientTeam(Client) == CT)
-        {
-            return Plugin_Handled;
-        }
-	}
     
+        //CT WIN
+        else if (CS_GetTeamScore(CT) == BLT_ROUND)
+        {
+            //Kick TR
+            if (GetClientTeam(i) == TR)
+            {
+                if ( IsClientConnected(i) && !IsFakeClient(i) )
+                {
+                    BanClient(i, BLT_TIME, BANFLAG_AUTO, BLT_REASON, BLT_MESSEGE);
+                    PrintToChatAll("%t", "Loser has been kicked");  
+                }
+            }
+            else if (GetClientTeam(i) == CT)
+            {
+                return Plugin_Handled;
+            }
+        }
+   
+    }
     return Plugin_Handled;
-}
+}  
