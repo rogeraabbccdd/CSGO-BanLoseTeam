@@ -1,6 +1,8 @@
 # CSGO-BanLoseTeam (WIP, HAVEN'T TEST YET)
 Ban Lose Team
 
+https://forums.alliedmods.net/showthread.php?p=2438288
+
 Special Thanks To CamerDisco
 
 #Cvar
